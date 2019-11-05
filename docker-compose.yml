@@ -1,0 +1,19 @@
+version: '2.0'
+
+services:
+  maradona:
+    build: .
+    container_name: maradona
+    restart: always
+    volumes:
+      - ./nginx.conf:/etc/nginx/nginx.conf
+      - /etc/letsencrypt:/etc/letsencrypt
+    ports:
+      - 80:80
+      - 443:443
+    networks:
+      - gopamoja
+
+networks:
+  gopamoja:
+    external: true
