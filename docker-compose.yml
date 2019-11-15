@@ -8,6 +8,8 @@ services:
     volumes:
       - ./nginx.conf:/etc/nginx/nginx.conf
       - /etc/letsencrypt:/etc/letsencrypt
+      - /gopamoja/images:/gopamoja/images
+      - /gopamoja/baresi/dist/console:/gopamoja/baresi/dist/console
     ports:
       - 80:80
       - 443:443
